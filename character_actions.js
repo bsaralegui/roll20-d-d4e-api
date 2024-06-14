@@ -472,6 +472,11 @@ class CharacterActions extends TokenActions{
 			}
 		}
 
+		// Reset the Action Point to 1, regardless of previous value
+		const previousActionPoints = this.getCurrentAttributeValue(this.actionPoints);
+		this.setCurrentAttributeValue(this.actionPoints, 1);
+		auditText += `\nAction Point set to 1 (was ${previousActionPoints}).`;
+
 		// Log the inputs
 		log(`Inputs: previousHp: ${previousHp}, previousSurges: ${previousSurges}, maxHp: ${maxHp}, maxSurges: ${maxSurges}`);
 
